@@ -19,7 +19,7 @@ soup = BeautifulSoup(r.content, "html.parser")
 
 gen_images = [link['href'] for link in soup.find_all("a", href=True) if re.match("^ap[0-9]+.html$", link['href'])]
 
-for link in gen_images[l.index("ap100801.html"):]:
+for link in gen_images:
     # skip if already downloaded
     # if os.path.isfile(download_folder + link + ".jpg"):
     #     print "skipping ", link
